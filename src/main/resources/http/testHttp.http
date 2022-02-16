@@ -1,0 +1,31 @@
+
+###
+POST http://localhost:8080/validation/api/items/add
+Content-Type: application/json
+
+{
+  "itemName": "Hello",
+  "price": 1000,
+  "quantity" : 10
+}
+
+### 실패케이스 - Object 에러
+POST http://localhost:8080/validation/api/items/add
+Content-Type: application/json
+
+{
+  "itemName": "Hello",
+  "price": 1000,
+  "quantity" : 1
+}
+
+### 실패케이스 - Field 에러
+POST http://localhost:8080/validation/api/items/add
+Content-Type: application/json
+
+{
+  "itemName": "",
+  "price": 1,
+  "quantity" : 99999
+}
+
